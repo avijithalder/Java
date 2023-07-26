@@ -1,0 +1,18 @@
+package Student_Detail;
+
+import java.util.Scanner;
+
+public class Student {
+
+	public static void main(String[] args) {
+
+		System.out.println("Enter Your Line :");
+		Scanner input = new Scanner(System.in);
+		char[] words = input.nextLine().toCharArray();
+		System.out.println("Reverse String :");
+		for (int i = words.length - 1; i >= 0; i--) {
+			System.out.print(words[i]);
+		}
+
+	}
+}
