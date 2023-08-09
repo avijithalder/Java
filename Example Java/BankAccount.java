@@ -1,4 +1,4 @@
-package Practice;
+package Bank_project;
 
 class BankAccount {
 	private int accountNumber;
@@ -16,7 +16,7 @@ class BankAccount {
 	public void deposit(double amount) {
 		if (amount > 0) {
 			balance = balance + amount;
-			System.out.println("Deposited: " + amount);
+
 		} else {
 			System.out.println("Invalid amount for deposit.");
 		}
@@ -26,12 +26,16 @@ class BankAccount {
 	public void withdraw(double amount) {
 		if (amount > 0 && amount <= balance) {
 			balance = balance - amount;
-			System.out.println("Withdrawn: " + amount);
+
 		} else {
 			System.out.println("Insufficient balance or invalid amount for withdrawal.");
 		}
 	}
 
+	// Getter for account number
+	public int getAccountNumber() {
+		return accountNumber;
+	}
 	// Get balance
 	public double getBalance() {
 		return balance;
@@ -53,34 +57,43 @@ class BankAccount {
 	public void displayAccountInfo() {
 		System.out.println("Account Number: " + accountNumber);
 		System.out.println("Account Holder Name: " + accountHolderName);
-		System.out.println("Balance: " + balance);
+		System.out.println("Available Balance: " + balance);
 	}
 
-	// Getter for account number
-	public int getAccountNumber() {
-		return accountNumber;
-	}
+
 }
 
 public class Main {
+
 	public static void main(String[] args) {
 		BankAccount account1 = new BankAccount(1, "John Doe", 1000.0);
 		BankAccount account2 = new BankAccount(2, "Jane Smith", 500.0);
 
 		// Display initial account information
 		System.out.println("Initial Account Information:");
-		account1.displayAccountInfo();
-		account2.displayAccountInfo();
 		System.out.println();
 
-		// Perform operations
+		account1.displayAccountInfo();
 		account1.deposit(200.0);
+		System.out.println("After Deposited: " + account1.getBalance());
+		
+		System.out.println();
+
+		account2.displayAccountInfo();
 		account2.withdraw(100.0);
+		System.out.println("After Withdrawn: " + account2.getBalance());
+		
+		System.out.println();
+		
 		account1.transaction(account2, 300.0);
 
 		// Display updated account information
 		System.out.println("\nUpdated Account Information:");
+		System.out.println();
+		
 		account1.displayAccountInfo();
 		account2.displayAccountInfo();
+
 	}
+
 }
