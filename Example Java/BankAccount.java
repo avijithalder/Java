@@ -11,7 +11,14 @@ class BankAccount {
 		this.accountHolderName = accountHolderName;
 		this.balance = balance;
 	}
+        private void setbalance(double balance) {
+		// TODO Auto-generated method stub
+		setbalance(balance);
+	}
 
+	public double getbalance() {
+		return balance;
+	}
 	// Deposit method
 	public void deposit(double amount) {
 		if (amount > 0) {
