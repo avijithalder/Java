@@ -1,25 +1,20 @@
-package Practice;
+package Assessment2;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int total = 0;
-
-		for (int i = 2; i <= 50; i++) {
-			int count = 0;//1 
-
-			for (int j = 2; j < i; j++) {
+		for (int i = 1; i <= 100; i++) {
+			int count = 0;
+			for (int j = 1; j <= i; j++) {
 				if (i % j == 0) {
 					count++;
 				}
 			}
-			if (count == 0) {
-				total++;
-				System.out.println(i);
+			if (count == 2) {
+				System.out.print(i + " ");
 			}
 		}
 
 	}
-
 }
